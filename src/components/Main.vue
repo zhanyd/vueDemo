@@ -10,7 +10,7 @@
         >
 
         <template v-for="(item,index) in $router.options.routes">
-          <el-submenu :index="index++">
+          <el-submenu :index="index+''">
             <template slot="title">
               <i :class="item.iconCls"></i>
               <span>{{item.name}}</span>
@@ -45,8 +45,18 @@
 
 <script>
     export default {
-        name: "Main"
+        name: "Main",
+        methods: {
+        handleOpen:function (argument) {
+          console.log(argument)
+          // body...
+        },
+        handleClose:function (argument) {
+          /* body... */
+        }
+      }
     }
+
 </script>
 
 <style scoped>
